@@ -1,0 +1,657 @@
+html, body {
+    margin: 0px;
+    padding: 0px;
+    min-width: 320px;
+    scroll-behavior: smooth;
+    scroll-padding-top: 130px;
+}
+
+.grid {
+    width: 100%;
+    display: grid;
+    grid-template-rows: 130px 150px 1fr 150px 100px;
+    gap: 10px;
+}
+
+header {
+    grid-row: 1;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    position: sticky;
+    top: 0%;
+    background-color: white;
+    z-index: 1;
+}
+
+#box-logo-header {
+    width: 60%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+#logoheader {
+    width: 180px;
+    height: 120px;
+}
+
+#icon-charriot {
+    width: 45%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-right: 2px solid rgba(250, 74, 12, 1);
+}
+
+#icon-charriot img {
+    width: 40px;
+    height: 40px;
+    padding-bottom: 5px;
+}
+
+nav {
+    width: 60%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-right: 2px solid rgba(250, 74, 12, 1);
+}
+
+#navbar {
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+#menu-toggle {
+    display: block;
+    position: relative;
+    z-index: 1;
+    margin: 0px;
+}
+
+#menu-toggle input {
+    width: 35px;
+    height: 30px;
+    position: absolute;
+    cursor: pointer;
+    opacity: 0;
+    z-index: 1;
+    margin: 0px;
+}
+
+#menu-toggle span {
+    display: block;
+    width: 33px;
+    height: 4px;
+    margin-bottom: 5px;
+    border-radius: 3px;
+    background: rgba(250, 74, 12, 1);
+    transform-origin: 4px 0px;
+    transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+                opacity 0.55s ease-in-out;
+}
+
+#menu-toggle span:first-child {
+    transform-origin: 0% 0%;
+}
+
+#menu-toggle span:nth-last-child(2) {
+    transform-origin: 0% 100%;
+}
+
+#menu-toggle input:checked ~ span {
+    opacity: 1;
+    transform: rotate(45deg) translate(-2px, -1px);
+    background: rgba(250, 74, 12, 1);
+}
+
+#menu-toggle input:checked ~ span:nth-last-child(3) {
+    opacity: 0;
+    transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+#menu-toggle input:checked ~ span:nth-last-child(2) {
+    transform: rotate(-45deg) translate(0, -1px);
+}
+
+#menu-burger {
+    border-radius: 10px;
+    position: absolute;
+    background: rgba(250, 74, 12, 1);
+    transform: translate(-100%, 0%);
+    transition: transform 0.5s cubic-bezier(0.2, 0.2, 0.7, 1.3);
+    visibility: hidden;
+}
+
+#menu-toggle input:checked ~ #menu-burger {
+    visibility: visible;
+    height: 500px;
+    width: 300px;
+    left: -150px;
+    top: 25px;
+    padding: 0%;
+    opacity: 0.9;
+    transform: none;
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+#menu-burger a {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    color: white;
+    text-decoration: none;
+    list-style: none;
+}
+
+#menu-burger img {
+    width: 40px;
+    height: 40px;
+}
+
+.menu-liens {
+    width: 60%;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+}
+
+#img-slogan {
+    grid-row: 2;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(0deg, rgba(23, 16, 16, 0.6), rgba(23, 16, 16, 0.6)),
+                       url(img/pizza-g3b86a2087_640.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.text-slogan {
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    text-align: center;
+}
+
+#container {
+    grid-row: 3;
+    width: 100%;
+    height: 100%;
+}
+
+#menu{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.menu-options {
+    width: 100%;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+#menu-options-salades {
+    height: 450px;
+}
+
+.titres-options h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 36px;
+    font-weight: 600;
+    opacity: 0.9;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    text-align: center;
+    margin: 0%;
+}
+
+.options-pizza {
+    width: 90%;
+    height: 150px;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+}
+
+.options-burger {
+    width: 90%;
+    height: 150px;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+}
+
+.options-salades {
+    width: 90%;
+    height: 150px;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+}
+
+.produit {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 25px;
+    width: 100%;
+    height: 50%;
+    text-align: center;
+    margin: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.prix-buy {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.prix {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 25px;
+    width: 50%;
+    height: 50%;
+    margin: 0px;
+    text-align: center;
+    color: white;
+}
+
+.buybutton {
+    width: 40%;
+    height: 70%;
+}
+
+button {
+    background-color: rgba(250, 74, 12, 1);
+    color: white;
+    border-radius: 30px;
+    border: 0px;
+    width: 100%;
+    height: 100%;
+    font-size: 24px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+}
+
+#img-footer {
+    grid-row: 4;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(0deg, rgba(23, 16, 16, 0.6), rgba(23, 16, 16, 0.6)),
+                       url(img/pizza-photo-footer.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#img-footer p {
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+}
+
+#iconsreseaux {
+    display: flex;
+    align-self: center;
+}
+
+#iconsreseaux img {
+    width: 40px;
+    height: 40px;
+}
+
+
+#logo-footer img {
+    width: 130px;
+    height: 100%;
+}
+
+footer {
+    width: 100%;
+    height: 100%;
+    grid-row: 5;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+#boxfooter-logo-icons {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+#copyright {
+    width: 100%;
+    font-family: 'Roboto', sans-serif;
+    font-size: 12px;
+    text-align: center;
+}
+
+#copyright p {
+    margin: 0px;
+}
+
+#backgroundpizza1 {
+    background-image: linear-gradient(0deg, rgba(23, 16, 16, 0.8), rgba(23, 16, 16, 0.5)),
+                       url(img/pizza1.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+#backgroundpizza2 {
+    background-image: linear-gradient(0deg, rgba(23, 16, 16, 0.8), rgba(23, 16, 16, 0.5)),
+                       url(img/pizza2.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+#backgroundpizza3 {
+    background-image: linear-gradient(0deg, rgba(23, 16, 16, 0.8), rgba(23, 16, 16, 0.5)),
+                       url(img/pizza3.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+#backgroundburger1 {
+    background-image: linear-gradient(0deg, rgba(23, 16, 16, 0.8), rgba(23, 16, 16, 0.5)),
+                       url(img/hamburger2.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+#backgroundburger2 {
+    background-image: linear-gradient(0deg, rgba(23, 16, 16, 0.8), rgba(23, 16, 16, 0.5)),
+                       url(img/hamburger1.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+#backgroundburger3 {
+    background-image: linear-gradient(0deg, rgba(23, 16, 16, 0.8), rgba(23, 16, 16, 0.5)),
+                       url(img/hamburger3.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+#backgroundsalades1 {
+    background-image: linear-gradient(0deg, rgba(23, 16, 16, 0.8), rgba(23, 16, 16, 0.5)),
+                       url(img/caesar-gcc9e3ec6c_640.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+#backgroundsalades2 {
+    background-image: linear-gradient(0deg, rgba(23, 16, 16, 0.8), rgba(23, 16, 16, 0.5)),
+                       url(img/salad-g314d2ba3d_640.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+@media only screen and (min-width: 650px) {
+    html, body {
+        scroll-padding-top: 130px;
+    }
+
+    .grid {
+        grid-template-rows: 120px 140px 1fr 140px 90px;
+    }
+
+    #box-logo-header {
+        justify-content: center;
+    }
+
+    #icon-charriot img {
+        width: 30%;
+        height: 40%;
+    }
+
+    #logoheader {
+        width: 80%;
+        height: 100%;
+    }
+
+    #menu-toggle span {
+        width: 50px;
+        height: 10px;
+    }
+
+    #menu-toggle input:checked ~ #menu-burger {
+        top: 40px;
+        align-items: center;
+    }
+
+    #menu-toggle input {
+        width: 50px;
+        height: 40px;
+    }
+
+    .menu-options {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-content: space-evenly;
+        border-bottom: 3px solid rgba(228, 228, 228, 1)
+    }
+
+    .titres-options {
+        width: 90%;
+    }
+
+    .options-pizza, .options-burger, .options-salades {
+        width: 40%;
+        height: 200px;
+    }
+
+    #menu-options-salades {
+        height: 350px;
+    }
+
+    #img-slogan p, #img-footer p{
+        font-size: 20px;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    html, body {
+        scroll-padding-top: 80px;
+    }
+
+    .grid {
+        grid-template-rows: 80px 140px 1fr 140px 60px;
+    }
+
+    #logoheader {
+        width: 60%;
+    }
+
+    #box-logo-header {
+        justify-content: center;
+        width: 30%;
+    }
+
+    #icon-charriot {
+        width: 20%;
+    }
+
+    #icon-charriot img {
+        width: 20%;
+        height: 45%;
+    }
+
+    nav {
+        width: 70%;
+    }
+    
+    #navbar {
+        width: 70%;
+        justify-content: flex-end;
+    }
+    
+    #menu-toggle {
+        width: 100%;
+    }
+    
+    #menu-toggle span {
+        display: none;
+    }
+    
+    #menu-burger {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        border-radius: 0px;
+        position:unset;
+        background: none;
+        transform: none;
+        transition: none;
+        visibility: visible;
+        padding: 0px;
+    }
+    
+    #menu-burger a {
+        font-size: 16px;
+        color: black;
+    }
+
+    #menu-burger img {
+        width: 20px;
+        height: 20px;
+    }
+
+    #menu-toggle input {
+        width: 0px;
+        height: 0px;
+        visibility: hidden;
+    }
+
+    #menu-toggle input:checked ~ #menu-burger {
+        width: 100%;
+        height: 100%;
+        flex-direction: row;
+    }
+
+    .menu-options {
+        width: 80%;
+        height: 350px;
+    }
+
+    .menu-options p {
+        font-size: 20px;
+    }
+
+    .titres-options {
+        width: 90%;
+    }
+
+    #img-slogan p, #img-footer p {
+        font-size: 22px;
+    }
+    
+    .options-burger, .options-salades, .options-pizza {
+        width: 25%;
+        height: 200px;
+        justify-content: flex-end;
+    }
+
+    .prix-buy, .produit {
+        height: 25%;
+        color: black;
+    }
+
+    .prix {
+        color: black;
+    }
+
+    button {
+        height: 100%;
+    }
+
+    footer {
+        flex-wrap: nowrap;
+    }
+
+    #boxfooter-logo-icons {
+        width: 70%;
+    }
+
+    #iconsreseaux img {
+        width: 50px;
+        height: 50px;
+    }
+    
+    #copyright {
+        width: 30%;
+    }
+
+    #backgroundpizza1 {
+        background-image: url(img/pizza1.jpg);
+        background-size: 100% 50%;
+        border: 1px solid rgba(250, 74, 12, 1);
+    }
+
+    #backgroundpizza2 {
+        background-image: url(img/pizza2.jpg);
+        background-size: 100% 50%;
+        border: 1px solid rgba(250, 74, 12, 1);
+    }
+
+    #backgroundpizza3 {
+        background-image: url(img/pizza3.jpg);
+        background-size: 100% 50%;
+        border: 1px solid rgba(250, 74, 12, 1);
+    }
+
+    #backgroundburger1 {
+        background-image: url(img/hamburger1.jpg);
+        background-size: 100% 50%;
+        border: 1px solid rgba(250, 74, 12, 1);
+    }
+
+    #backgroundburger2 {
+        background-image: url(img/hamburger2.jpg);
+        background-size: 100% 50%;
+        border: 1px solid rgba(250, 74, 12, 1);
+    }
+
+    #backgroundburger3 {
+        background-image: url(img/hamburger3.jpg);
+        background-size: 100% 50%;
+        border: 1px solid rgba(250, 74, 12, 1);
+    }
+
+    #backgroundsalades1 {
+        background-image: url(img/caesar-gcc9e3ec6c_640.jpg);
+        background-size: 100% 50%;
+        border: 1px solid rgba(250, 74, 12, 1);
+    }
+
+    #backgroundsalades2 {
+        background-image: url(img/salad-g314d2ba3d_640.jpg);
+        background-size: 100% 50%;
+        border: 1px solid rgba(250, 74, 12, 1);
+    }
+}

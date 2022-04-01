@@ -1,0 +1,643 @@
+html, body {
+    margin: 0px;
+    padding: 0px;
+    min-width: 320px;
+    scroll-behavior: smooth;
+    scroll-padding-top: 130px;
+}
+
+.grid {
+    width: 100%;
+    display: grid;
+    grid-template-rows: 130px 150px 1fr 150px 100px;
+    gap: 10px;
+}
+
+header {
+    grid-row: 1;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    position: sticky;
+    top: 0%;
+    background-color: white;
+    z-index: 1;
+}
+
+#box-logo-header {
+    width: 60%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+#logoheader {
+    width: 180px;
+    height: 120px;
+}
+
+#icon-charriot {
+    width: 45%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-right: 2px solid rgba(250, 74, 12, 1);
+}
+
+#icon-charriot img {
+    width: 40px;
+    height: 40px;
+    padding-bottom: 5px;
+}
+
+#img-slogan {
+    grid-row: 2;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(0deg, rgba(23, 16, 16, 0.6), rgba(23, 16, 16, 0.6)),
+                       url(img/pizza-g3b86a2087_640.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.text-slogan {
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    text-align: center;
+}
+
+nav {
+    width: 60%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-right: 2px solid rgba(250, 74, 12, 1);
+}
+
+#navbar {
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+#menu-toggle {
+    display: block;
+    position: relative;
+    z-index: 1;
+    margin: 0px;
+    justify-content: center;
+}
+
+#menu-toggle input {
+    width: 35px;
+    height: 30px;
+    position: absolute;
+    cursor: pointer;
+    opacity: 0;
+    z-index: 1;
+    margin: 0px;
+}
+
+#menu-toggle span {
+    display: block;
+    width: 33px;
+    height: 4px;
+    margin-bottom: 5px;
+    border-radius: 3px;
+    background: rgba(250, 74, 12, 1);
+    transform-origin: 4px 0px;
+    transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+                opacity 0.55s ease-in-out;
+}
+
+#menu-toggle span:first-child {
+    transform-origin: 0% 0%;
+}
+
+#menu-toggle span:nth-last-child(2) {
+    transform-origin: 0% 100%;
+}
+
+#menu-toggle input:checked ~ span {
+    opacity: 1;
+    transform: rotate(45deg) translate(-2px, -1px);
+    background: rgba(250, 74, 12, 1);
+}
+
+#menu-toggle input:checked ~ span:nth-last-child(3) {
+    opacity: 0;
+    transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+#menu-toggle input:checked ~ span:nth-last-child(2) {
+    transform: rotate(-45deg) translate(0, -1px);
+}
+
+#menu-burger {
+    border-radius: 30px;
+    position: absolute;
+    background: rgba(250, 74, 12, 1);
+    transform: translate(-100%, 0%);
+    transition: transform 0.5s cubic-bezier(0.2, 0.2, 0.7, 1.3);
+    visibility: hidden;
+}
+
+#menu-toggle input:checked ~ #menu-burger {
+    visibility: visible;
+    height: 500px;
+    width: 300px;
+    left: -150px;
+    top: 25px;
+    padding: 0%;
+    opacity: 0.9;
+    transform: none;
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+#menu-burger a {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    color: white;
+    text-decoration: none;
+    list-style: none;
+}
+
+#menu-burger img {
+    width: 40px;
+    height: 40px;
+}
+
+.menu-liens {
+    width: 60%;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    grid-row: 3;
+}
+
+h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 35px;
+    font-weight: 600;
+    opacity: 0.9;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    text-align: center;
+    margin-bottom: 0px;
+}
+
+.form-info {
+    width: 100%;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.champ-informations {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    height: 50px;
+    align-self: center;
+}
+
+.champ-informations label {
+    align-self: center;
+}
+
+.champ-informations input {
+    border-radius: 10px;
+    height: 20px;
+    border: 1px solid black;
+}
+
+#button-upload {
+    display: flex;
+    width: 100%;
+    height: 100px;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column-reverse;
+}
+
+#upload {
+    width: 30%;
+    height: 40px;
+    background-color: rgba(250, 74, 12, 1);
+    color: white;
+    border: 0px;
+    border-radius: 10px;
+}
+
+#captcha {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+}
+
+#captcha img {
+    width: 30%;
+    height: 100%;
+}
+
+#box-text-message {
+    display: flex;
+    flex-direction: column;
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+    width: 90%;
+    height: 250px;
+    align-self: center;
+    justify-content: space-around;
+    text-indent: 5px;
+}
+
+#text-object {
+    display: flex;
+    flex-direction: column;
+    
+}
+
+#text-message {
+    display: flex;
+    flex-direction: column;
+}
+
+#text-object input {
+    height: 25px;
+    border-radius: 10px;
+    border: 1px solid black;
+}
+
+#text-message input {
+    height: 150px;
+    border-radius: 10px;
+    border: 1px solid black;
+}
+
+#mape {
+    width: 90%;
+    align-self: center;
+    padding: 10px 0 10px 0;
+}
+
+iframe {
+    width: 100%;
+    height: 100%;
+}
+
+#button-submit {
+    width: 100%;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#submit {
+    height: 70%;
+    width: 40%;
+    border: 0px;
+    border-radius: 30px;
+    background: rgba(250, 74, 12, 1);
+    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+}
+
+#img-footer {
+    grid-row: 4;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(0deg, rgba(23, 16, 16, 0.6), rgba(23, 16, 16, 0.6)),
+                       url(img/pizza-photo-footer.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#img-footer p {
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+}
+
+#iconsreseaux {
+    display: flex;
+    align-self: center;
+}
+
+#iconsreseaux img {
+    width: 40px;
+    height: 40px;
+}
+
+#logo-footer img {
+    width: 130px;
+    height: 100%;
+}
+
+footer {
+    width: 100%;
+    height: 100%;
+    grid-row: 5;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+#boxfooter-logo-icons {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+#copyright {
+    width: 100%;
+    font-family: 'Roboto', sans-serif;
+    font-size: 12px;
+    text-align: center;
+}
+
+@media only screen and (min-width: 650px) {
+    .grid {
+        grid-template-rows: 120px 140px 1fr 140px 90px;
+    }
+
+    #box-logo-header {
+        justify-content: center;
+    }
+
+    #icon-charriot img {
+        width: 30%;
+        height: 40%;
+    }
+
+    #logoheader {
+        width: 80%;
+        height: 100%;
+    }
+
+    #menu-toggle span {
+        width: 50px;
+        height: 10px;
+    }
+
+    #menu-toggle input:checked ~ #menu-burger {
+        top: 40px;
+        align-items: center;
+    }
+
+    #menu-toggle input {
+        width: 50px;
+        height: 40px;
+    }
+
+    #img-slogan p, #img-footer p{
+        font-size: 20px;
+    }
+
+    .form-info {
+        flex-flow: row wrap;
+        width: 90%;
+        height: 300px;
+        justify-content: space-evenly;
+        align-self: center;
+    }
+
+    .champ-informations {
+        width: 40%;
+        height: 80px;
+    }
+
+    .champ-informations label {
+        align-self: flex-start;
+        padding-left: 10px;
+        font-size: 18px;
+    }
+
+    .champ-informations input {
+        height: 40px;
+        text-indent: 10px;
+        font-size: 16px;
+    }
+
+    #captcha {
+        width: 100%;
+    }
+    
+    #captcha img {
+        width: 20%;
+        height: 100%;
+    }
+
+    #box-text-message {
+        width: 80%;
+    }
+
+    #button-upload {
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+
+    #upload {
+        width: 20%;
+        height: 40px;
+        font-size: 18px;
+    }
+
+    #upload input {
+        font-size: 20px;
+    }
+
+    #box-text-message {
+        height: 350px;
+        font-size: 18px;
+        justify-content: space-evenly;
+    }
+
+    #text-object input {
+        height: 40px;
+    }
+
+    #text-message input {
+        height: 200px;
+    }
+
+    #mape {
+        height: 150px;
+        width: 80%;
+    }
+
+    #button-submit {
+        width: 80%;
+        align-self: center;
+    }
+
+    #submit {
+        width: 30%;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .grid {
+        grid-template-rows: 80px 140px 1fr 140px 60px;
+    }
+
+    #logoheader {
+        width: 60%;
+    }
+
+    #box-logo-header {
+        justify-content: center;
+        width: 30%;
+    }
+
+    #icon-charriot {
+        width: 20%;
+    }
+
+    #icon-charriot img {
+        width: 20%;
+        height: 45%;
+    }
+
+    nav {
+        width: 70%;
+    }
+    
+    #navbar {
+        width: 70%;
+        justify-content: flex-end;
+    }
+    
+    #menu-toggle {
+        width: 100%;
+    }
+    
+    #menu-toggle span {
+        display: none;
+    }
+
+    #menu-toggle input {
+        width: 0px;
+        height: 0px;
+        visibility: hidden;
+    }
+    
+    #menu-burger {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        border-radius: 0px;
+        position:unset;
+        background: none;
+        transform: none;
+        transition: none;
+        visibility: visible;
+        padding: 0px;
+    }
+    
+    #menu-burger a {
+        font-size: 16px;
+        color: black;
+    }
+
+    #menu-burger img {
+        width: 20px;
+        height: 20px;
+    }
+
+    #menu-toggle input:checked ~ #menu-burger {
+        width: 100%;
+        height: 100%;
+        flex-direction: row;
+    }
+
+    #img-slogan p, #img-footer p {
+        font-size: 22px;
+    }
+
+    .form-info {
+        width: 70%;
+        height: 250px;
+    }
+
+    .champ-informations input {
+        height: 25px;
+    }
+
+    #button-upload {
+        height: 50px;
+    }
+
+    #upload {
+        height: 100%;
+        font-size: 20px;
+    }
+
+    #captcha {
+        height: 80px;
+    }
+
+    #captcha img {
+        width: 10%;
+    }
+
+    #box-text-message {
+        width: 60%  ;
+        height: 300px;
+    }
+
+    #text-object input {
+        height: 25px;
+    }
+
+    #text-message input {
+        height: 150px;
+    }
+
+    #mape {
+        width: 60%;
+        height: 200px;
+    }
+
+    #submit {
+        width: 25%;
+        font-size: 22px;
+    }
+
+    footer {
+        flex-wrap: nowrap;
+    }
+
+    #boxfooter-logo-icons {
+        width: 70%;
+    }
+    
+    #copyright {
+        width: 30%;
+    }
+
+    #iconsreseaux img {
+        width: 50px;
+        height: 50px;
+    }
+}
